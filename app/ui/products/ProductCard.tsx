@@ -9,11 +9,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
     <ClientBox product={product}>
       <Paper variant="outlined" style={{ padding: "16px", margin: "16px 0" }}>
         <Stack spacing={2} alignItems="center">
-          <img
-            src={product.thumbnail}
-            alt={product.title}
-            style={{ width: "300px" }}
-          />
+          <img src={product.thumbnail} alt={product.title} />
           <Typography alignSelf={"flex-start"} variant="body2">
             {product.brand}
           </Typography>

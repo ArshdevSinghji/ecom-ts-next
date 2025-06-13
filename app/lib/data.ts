@@ -1,11 +1,14 @@
-export async function getData() {
+export async function getData(currentPage: number = 0) {
   try {
-    const res = await fetch("https://dummyjson.com/products?limit=10&skip=0");
+    const res = await fetch(
+      `https://dummyjson.com/products?limit=10&skip=${currentPage * 10}`
+    );
     const data = await res.json();
-    return data.products;
+    const total = data.total;
+    return { products: data.products, total };
   } catch (error) {
     console.error("Error fetching data:", error);
-    return [];
+    return { products: [], total: 0 };
   }
 }
 
