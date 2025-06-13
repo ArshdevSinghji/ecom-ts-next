@@ -2,10 +2,11 @@ import { Product } from "@/app/lib/definations";
 import { Paper, Stack, Typography } from "@mui/material";
 import React from "react";
 import AddToCartButton from "../AddToCartButton";
+import ClientBox from "../ClientBox";
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   return (
-    <>
+    <ClientBox product={product}>
       <Paper variant="outlined" style={{ padding: "16px", margin: "16px 0" }}>
         <Stack spacing={2} alignItems="center">
           <img
@@ -35,7 +36,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
           <AddToCartButton productId={product.id} />
         </Stack>
       </Paper>
-    </>
+    </ClientBox>
   );
 };
 

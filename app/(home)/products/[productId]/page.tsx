@@ -4,7 +4,8 @@ import AddToCartButton from "@/app/ui/AddToCartButton";
 import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 
-const ProductById = async ({ params }: { params: { productId: number } }) => {
+const ProductById = async (props: { params: { productId: number } }) => {
+  const { params } = await props;
   const product: Product = await getDataById(params.productId);
 
   return (

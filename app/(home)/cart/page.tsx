@@ -1,3 +1,5 @@
+"use client";
+
 import { useAppSelector } from "@/app/redux/hooks";
 import { Container, Typography } from "@mui/material";
 import React from "react";

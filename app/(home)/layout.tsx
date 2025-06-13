@@ -4,7 +4,7 @@ import "../globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material";
 import theme from "../ui/theme";
-import Navbar from "../ui/Navbar";
+import Navbar from "../ui/navbar/Navbar";
 import StoreProvider from "../redux/StoreProvider";
 
 const geistSans = Geist({
@@ -35,15 +35,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={roboto.variable}>
-      <Navbar />
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <AppRouterCacheProvider>
-          <ThemeProvider theme={theme}>
-            <StoreProvider>{children}</StoreProvider>
-          </ThemeProvider>
-        </AppRouterCacheProvider>
-      </body>
-    </html>
+    <StoreProvider>
+      <html lang="en" className={roboto.variable}>
+        <Navbar />
+        <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <AppRouterCacheProvider>
+            <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          </AppRouterCacheProvider>
+        </body>
+      </html>
+    </StoreProvider>
   );
 }

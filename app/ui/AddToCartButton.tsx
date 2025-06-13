@@ -9,7 +9,9 @@ import { setProduct } from "../redux/slice/productSlice";
 
 const AddToCartButton: React.FC<{ productId: number }> = ({ productId }) => {
   const dispatch = useAppDispatch();
-  const handleClick = async () => {
+
+  const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
     const product: Product = await getDataById(productId);
     dispatch(setProduct(product));
   };

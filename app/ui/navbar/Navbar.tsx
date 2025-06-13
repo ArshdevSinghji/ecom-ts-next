@@ -1,15 +1,7 @@
-import {
-  AppBar,
-  Avatar,
-  Badge,
-  Box,
-  Button,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { AppBar, Avatar, Box, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import Link from "next/link";
+import BadgeCount from "./BadgeCount";
 
 const Navbar = () => {
   return (
@@ -21,9 +13,7 @@ const Navbar = () => {
           </Typography>
           <Link href="/cart" color="inherit">
             <Box sx={{ mr: 2 }}>
-              <Badge badgeContent={4} color="primary">
-                <ShoppingCartIcon />
-              </Badge>
+              <BadgeCount />
             </Box>
           </Link>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
