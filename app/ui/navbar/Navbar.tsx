@@ -1,7 +1,8 @@
-import { AppBar, Avatar, Box, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import Link from "next/link";
 import BadgeCount from "./BadgeCount";
+import User from "./User";
 
 const Navbar = () => {
   return (
@@ -17,15 +18,7 @@ const Navbar = () => {
             </Box>
           </Link>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <Avatar />
-            <Box>
-              <Typography variant="body2" color="inherit">
-                User Name
-              </Typography>
-              <Typography variant="caption" color="inherit">
-                email@gmail.com
-              </Typography>
-            </Box>
+            <User />
           </Box>
         </Toolbar>
       </AppBar>

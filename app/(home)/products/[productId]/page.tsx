@@ -5,7 +5,7 @@ import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 
 const ProductById = async (props: { params: { productId: number } }) => {
-  const { params } = await props;
+  const { params } = props;
   const product: Product = await getDataById(params.productId);
 
   return (

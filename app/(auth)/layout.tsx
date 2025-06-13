@@ -2,6 +2,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material";
 import { Roboto } from "next/font/google";
 import theme from "../ui/theme";
+// import StoreProvider from "../redux/StoreProvider";
 
 export const metadata = {
   title: "Next.js",
@@ -21,6 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    // <StoreProvider>
     <html lang="en" className={roboto.variable}>
       <body>
         <AppRouterCacheProvider>
@@ -28,5 +30,6 @@ export default function RootLayout({
         </AppRouterCacheProvider>
       </body>
     </html>
+    // </StoreProvider>
   );
 }

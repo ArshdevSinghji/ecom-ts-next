@@ -1,9 +1,8 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
+import { Typography } from "@mui/material";
 
 const Loading = () => {
-  return <FontAwesomeIcon icon={faArrowsRotate} spin fontSize={32} />;
+  return <Typography>loading...</Typography>;
 };
 
 export default Loading;
