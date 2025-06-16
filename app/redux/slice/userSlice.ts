@@ -17,13 +17,17 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     setUser: (state, action: PayloadAction<UserState>) => {
-      console.log("Setting user state:", action.payload);
       state.displayName = action.payload.displayName;
       state.email = action.payload.email;
       state.photoURL = action.payload.photoURL;
     },
+    removeUser: (state) => {
+      state.displayName = null;
+      state.email = null;
+      state.photoURL = null;
+    },
   },
 });
 
-export const { setUser } = userSlice.actions;
+export const { setUser, removeUser } = userSlice.actions;
 export default userSlice.reducer;
